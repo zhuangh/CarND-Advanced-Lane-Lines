@@ -1,4 +1,4 @@
-#Advanced Lane Finding Project
+# Advanced Lane Finding Project
 #### Hao Zhuang, 2018
 
 
@@ -157,7 +157,10 @@ I implemented this step in the same notebook script in the function `locating_la
 
 #### Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./video/project_video_output.mp4)
+Here's [Youtube link](https://youtu.be/dgWzId29zj8)
+or check [link to my video result](./videos/project_video_output.mp4)
+
+
 
 ---
 
