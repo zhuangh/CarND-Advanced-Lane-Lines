@@ -76,10 +76,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image in the function *combined_sobel_gradient_thres*.  
-
-
-Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image in the function *combined_sobel_gradient_thres*. Here's examples of my output for this step.  
 
 Test 1
 ![alt text][sobel1]
@@ -125,7 +122,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I fit my lane lines with a 2nd order polynomial kinda like this:
+Then I fit my lane lines with a 2nd order polynomial.
 
 ![alt text][2lanes]
 
@@ -136,8 +133,11 @@ Then I fit my lane lines with a 2nd order polynomial kinda like this:
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in the same notebook script in the function `radius_curvature_center()`
+I did this in the same notebook script in the function `radius_curvature_center()` using the formula from Udacity lecture 
 
+Rcurve​=(1+(2Ay+B)^2 )^(3/2​) / |2A|
+
+where x=f(y) = Ay^2 + By+ C is the second polynomial curve
 
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
@@ -169,7 +169,9 @@ or check [link to my video result](./videos/project_video_output.mp4).
 #### Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 
-I used the historical images to smooth the lane detection in order to reduce the jitters during the lane detection as much as possible. The overall performance is good. However, for more stable detection, we need to fine tune the memory parameters as well as more smoothing techniques, which can avoid jitters furthermore.
+I used the historical images to smooth the lane detection in order to reduce the jitters during the lane detection as much as possible. This is done in the function `find_lanes()`, where I maintain two arrays for left and right lanes. The average of them will be used to smooth the lane line when a bad lane detection is encountered. 
+
+The overall performance is good. However, when the environment becomes more complicated due to the light or color etc, the pipeline may fail. For more stable lane detection, we need to fine tune the memory parameters as well as more smoothing techniques, which can avoid jitters furthermore.
 
 
 
