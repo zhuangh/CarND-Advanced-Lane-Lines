@@ -76,7 +76,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image in the function *combined_sobel_gradient_thres*. Here's examples of my output for this step.  
+I used a combination of color and gradient thresholds to generate a binary image in the function *combined_sobel_gradient_thres*. Here are examples of my output for this step.  
 
 Test 1
 ![alt text][sobel1]
@@ -171,7 +171,7 @@ or check [link to my video result](./videos/project_video_output.mp4).
 
 I used the historical images to smooth the lane detection in order to reduce the jitters during the lane detection as much as possible. This is done in the function `find_lanes()`, where I maintain two arrays for left and right lanes. The average of them will be used to smooth the lane line when a bad lane detection is encountered. 
 
-The overall performance is good. However, when the environment becomes more complicated due to the light or color etc, the pipeline may fail. For more stable lane detection, we need to fine tune the memory parameters as well as more smoothing techniques, which can avoid jitters furthermore.
+The overall performance is good. However, when the environment becomes more complicated due to the light or color etc, the pipeline may fail. For more stable lane detection, we need to fine-tune the memory parameters as well as more smoothing techniques, which can avoid jitters furthermore.
 
 
 
