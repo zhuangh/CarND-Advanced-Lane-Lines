@@ -29,6 +29,11 @@ The goals / steps of this project are the following:
 [cover_lane2]: ./images/cover_lane2.png 
 [cover_lane3]: ./images/cover_lane3.png 
 
+
+[cover_lane4]: ./images/cover_lane4.png 
+[cover_lane5]: ./images/cover_lane5.png 
+[cover_lane6]: ./images/cover_lane6.png 
+
 [2lanes]: ./images/2lanes.png 
 [2lanes_red]: ./images/2lanes_red.png 
 [hist1]: ./images/hist1.png 
@@ -145,11 +150,11 @@ where x=f(y) = Ay^2 + By+ C is the second polynomial curve
 I implemented this step in the same notebook script in the function `locating_lanes()`.  Here is an example of my result on a test image:
 
 
-![alt text][cover_lane1]
+![alt text][cover_lane4]
 
-![alt text][cover_lane2]
+![alt text][cover_lane5]
 
-![alt text][cover_lane3]
+![alt text][cover_lane6]
 
 ---
 
@@ -157,8 +162,7 @@ I implemented this step in the same notebook script in the function `locating_la
 
 #### Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's [Youtube link](https://youtu.be/dgWzId29zj8)
-or check [link to my video result](./videos/project_video_output.mp4).
+Check [link to my video result](./videos/project_video_output.mp4).
 
 
 
@@ -169,7 +173,7 @@ or check [link to my video result](./videos/project_video_output.mp4).
 #### Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 
-I used the historical images to smooth the lane detection in order to reduce the jitters during the lane detection as much as possible. This is done in the function `find_lanes()`, where I maintain two arrays for left and right lanes. The average of them will be used to smooth the lane line when a bad lane detection is encountered. 
+I used the historical images to smooth the lane detection in order to reduce the jitters during the lane detection as much as possible. This is done in the function `find_lanes()`, where I maintain two arrays for left and right lanes. The average of them will be used to smooth the lane line when a bad lane detection is encountered. Therefore, it trades for a little misalign with the lanes because the fitted lanes from the frame is bad.
 
 The overall performance is good. However, when the environment becomes more complicated due to the light or color etc, the pipeline may fail. For more stable lane detection, we need to fine-tune the memory parameters as well as more smoothing techniques, which can avoid jitters furthermore.
 
